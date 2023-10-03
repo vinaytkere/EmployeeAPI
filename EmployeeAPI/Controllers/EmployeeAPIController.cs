@@ -3,6 +3,7 @@ using Employee.Models;
 using EmployeeAPI.Models;
 using EmployeeAPI.Models.DTO;
 using EmployeeAPI.Repository.IRepository;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
@@ -10,7 +11,9 @@ using System.Text.Json;
 
 namespace EmployeeAPI.Controllers
 {
+    [Authorize(Roles = "admin")]
     [Route("api/[controller]")]
+    [ProducesResponseType(StatusCodes.Status401Unauthorized)]
     [ApiController]
     public class EmployeeAPIController : ControllerBase
     {

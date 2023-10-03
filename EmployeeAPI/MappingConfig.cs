@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using Employee.Models.DTO;
+using Employee.Models;
 using EmployeeAPI.Models;
 using EmployeeAPI.Models.DTO;
 
@@ -15,6 +17,8 @@ namespace EmployeeAPI
             CreateMap<Departments, DepartmentsDTO>().ReverseMap();
             CreateMap<Departments, DepartmentsCreateDTO>().ReverseMap();
             CreateMap<Departments, DepartmentUpdateDTO>().ReverseMap();
+
+            CreateMap<ApplicationUser, UserDTO>().ReverseMap();
         }
     }
 }
